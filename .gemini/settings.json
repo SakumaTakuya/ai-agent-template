@@ -1,0 +1,42 @@
+{
+  "contextFileName": "GEMINI.md",
+  "fileFiltering": {
+    "respectGitIgnore": true,
+    "enableRecursiveFileSearch": true
+  },
+  "excludeTools": [
+    "ShellTool(rm -rf)"
+  ],
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    },
+    "github": {
+      "httpUrl": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "${GITHUB_PAT}"
+      },
+      "timeout": 5000
+    },
+    "serena": {
+      "displayName": "Serena Coding Agent",
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "${SERENA_ROOT}",
+        "serena-mcp-server",
+        "--transport",
+        "stdio",
+        "--context",
+        "ide-assistant"
+      ]
+    },
+    "deepwiki": {
+      "url": "https://mcp.deepwiki.com/sse"
+    }
+  }
+}
