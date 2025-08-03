@@ -15,7 +15,7 @@ Show current status and progress for feature: **{{args}}**
 
 ### All Specs Overview
 - Available specs: !{ls -la .kiro/specs/}
-- Active specs: !{find .kiro/specs/ -name "spec.json" -exec grep -l "implementation_ready.*true" {} \;}
+- Active specs: !{find .kiro/specs/ -name "spec.json" -exec grep -l "implementation_ready.*true" {} ;}
 
 ## Task: Generate Status Report
 
